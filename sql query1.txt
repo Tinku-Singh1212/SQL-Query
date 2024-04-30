@@ -1,0 +1,18 @@
+SELECT * FROM Client_Master
+CREATE TABLE student_details_11(st_id NUMBER(5),st_name VARCHAR(20),st_lastname VARCHAR(20),age NUMBER(5))
+-- INSERT INTO student_details_11(st_id,st_name,st_lastname,age) VALUES(1,'tinku','singh',20)
+INSERT INTO student_details_11 VALUES(1,'tinku','singh',20);
+INSERT INTO student_details_11 VALUES(2,'shivam','lodhi',22);
+INSERT INTO student_details_11 VALUES(3,'ravi','singh',19);
+INSERT INTO student_details_11 VALUES(4,'rinku','kumar',21);
+SELECT * FROM student_details_11
+CREATE TABLE st_details(st_id NUMBER(5),st_name VARCHAR(20))
+INSERT INTO st_details SELECT st_id,st_name FROM student_details_11
+SELECT * FROM st_details
+SELECT * FROM tab
+SELECT * FROM student_details_11 WHERE st_id=1
+UPDATE student_details_11 SET age=24
+DELETE FROM student_details_11
+DELETE FROM student_details_11 WHERE st_id=1
+SELECT DISTINCT * FROM student_details_11 ORDER BY st_name DESC
+SELECT age*2 AS real_age, age*2 "updated_age" FROM student_details_11

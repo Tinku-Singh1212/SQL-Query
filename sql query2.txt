@@ -1,0 +1,12 @@
+SELECT * FROM Client_Master
+SELECT Name FROM Client_Master WHERE Bal_Due=15000
+SELECT * FROM Client_Master WHERE Name LIKE 'M%';
+SELECT * FROM Client_Master WHERE State='Maharastra' OR State='Karnataka';
+UPDATE Client_Master SET City='Bangalore' WHERE Client_No='C00005';
+UPDATE Client_Master SET Bal_Due=1000 WHERE Client_No='C00001';
+UPDATE Client_Master SET City='Pune' WHERE Client_No='C00006';
+UPDATE Client_Master SET Bal_Due=0
+DELETE FROM Client_Master WHERE State='Tamil nadu'
+DELETE FROM Client_Master WHERE Client_No='C00005'
+DELETE FROM Client_Master WHERE City='Mumbai'
+DELETE FROM Client_Master
