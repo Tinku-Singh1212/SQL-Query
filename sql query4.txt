@@ -1,0 +1,29 @@
+SELECT * FROM Client_Master
+-- upper lower concat(add column) substr("hello world"1,5) instr('tomato','o',1)position known ltrim('324tinku',324)remove element
+-- LPAD('page 1', 34, '*')
+--REPLACE(source, search_str, replace_str)   ROUND(34.544, 2) EXP(n)  ABS(n) POWER(n1, n2)  FLOOR(23.4) CEIL(n)
+CREATE TABLE Employee(emp_id NUMBER(5),first_name VARCHAR2(10),last_name VARCHAR2(10),email VARCHAR2(15),phone_number NUMBER,salary NUMBER)
+ALTER TABLE Employee MODIFY (phone_number VARCHAR(20))
+ALTER TABLE Employee MODIFY (salary NUMBER(10))
+ALTER TABLE Employee MODIFY (email VARCHAR2(30))
+INSERT INTO Employee VALUES (101,'Steven','King','sking','011.124.2679',50000);
+INSERT INTO Employee VALUES (102,'Neena','Greenberg','ngreen','011.124.2457',70000);
+INSERT INTO Employee VALUES (103,'Lex','Kochar','lkochar','011.124.9803',90000);
+INSERT INTO Employee VALUES (104,'Alexander','Austin','aaustin','011.124.8989',40000);
+INSERT INTO Employee VALUES (105,'Bruce','Lorentz','blorentz','011.127.4343',35000);
+INSERT INTO Employee VALUES (106,'David','Chen','dchen','011.127.5678',40000);
+INSERT INTO Employee VALUES (107,'Danna','John','djohn','011.124.2222',85000);
+INSERT INTO Employee VALUES (108,'Nancy','Rodger','nrodger','011.123.7892',660000);
+INSERT INTO Employee VALUES (109,'Daniel','Patel','dpatel','011.123.3456',43000);
+INSERT INTO Employee VALUES (110,'Den','Tucker','dtucker','011.124.4567',20000);
+SELECT * FROM Employee
+
+UPDATE Employee SET phone_number=REPLACE(phone_number, '124', '199')
+SELECT * FROM Employee WHERE LENGTH(first_name)>=5
+SELECT LPAD(salary, 7, '0') AS paddedsalary FROM Employee
+UPDATE Employee SET email=CONCAT(email, '@kiet.com')
+SELECT SUBSTR(phone_number,-4,4) FROM Employee
+SELECT first_name,LENGTH(first_name)FROM Employee WHERE last_name LIKE'_c%'
+SELECT first_name,LENGTH(first_name)FROM Employee WHERE first_name LIKE'A%' OR first_name LIKE'D%' OR first_name LIKE'N%' ORDER BY first_name
+SELECT LTRIM(phone_number,'011.') FROM Employee
+SELECT SUBSTR(phone_number, 1, LENGTH(phone_number) - 4) AS extracted_phone_number FROM Employee
