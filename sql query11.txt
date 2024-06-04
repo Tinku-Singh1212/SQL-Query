@@ -1,0 +1,42 @@
+select * FROM client_master2
+select * from product_master
+select * from salesman_master2
+select * from sales_order
+select * from sales_order_details
+
+select name from client_master2 where name like '_a%';
+
+select * from client_master2 where city like 'M%';
+
+select * from client_master2 where baldue>10000;
+
+select * from sales_order where TO_CHAR(order_date,MON) = 'may';
+
+select * from sales_order where client_no='c00001' or client_no='c00002';
+
+select * from product_master where sellprice>500 and sellprice<=750;
+
+select sellprice*15 as new_price from product_master where sellprice>500;
+
+select name,city,state from client_master2 where state not in 'Maharashtra';
+
+select COUNT(order_no) from sales_order
+
+select max(sellprice) as max_price , min(sellprice) as min_price from product_master;
+
+select avg(sellprice) from product_master;
+
+select * from product_master where qtyonhand>reorderlvl;
+ 
+
+ 
+### Data Manipulations
+
+   SELECT Order_No, TO_CHAR(Order_Date, 'Day') AS OrderDay FROM sales_order;
+   
+
+   SELECT TO_CHAR(Dely_Date, 'Month') AS DeliveryMonth, TO_CHAR(Dely_Date, 'DD') AS DeliveryDate FROM sales_order;
+   
+   SELECT TO_CHAR(Order_Date, 'DD-Month-YY') AS FormattedOrderDate FROM sales_order;
+   
+   SELECT SYSDATE + 15 AS FutureDate FROM dual;
